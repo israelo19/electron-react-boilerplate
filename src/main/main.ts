@@ -25,11 +25,32 @@ class AppUpdater {
 
 let mainWindow: BrowserWindow | null = null;
 
-ipcMain.on('ipc-example', async (event, arg) => {
+ipcMain.on('ipc-example', async (event, arg) => { //listening for messages from renderer
   const msgTemplate = (pingPong: string) => `IPC test: ${pingPong}`;
   console.log(msgTemplate(arg));
-  event.reply('ipc-example', msgTemplate('pong'));
+  event.reply('ipc-example', msgTemplate('Bong')); //message recieved
 });
+
+async function function1 (event, arg) {
+  console.log("test")
+}
+
+async function send (event, arg) {
+  console.log('Message Recieved')
+}
+
+// ipcMain.once('sendConfirmation', async (event, send) => {
+//   console.log(msgTemplate(send));
+//   event.reply('sendConfirmation', msgTemplate('Message Recieved')); //message recieved
+
+// });
+
+
+
+
+
+
+ipcMain.on('doSomeBackendTask', function1);
 
 if (process.env.NODE_ENV === 'production') {
   const sourceMapSupport = require('source-map-support');

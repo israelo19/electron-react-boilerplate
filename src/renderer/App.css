@@ -8,9 +8,9 @@ body {
   height: 100vh;
   background: linear-gradient(
     200.96deg,
-    #fedc2a -29.09%,
-    #dd5789 51.77%,
-    #7a2c9e 129.35%
+    #dfdede -29.09%,
+    /* #7d69ff 51.77%, */
+    #919dcf 129.35%
   );
   font-family: sans-serif;
   overflow-y: hidden;
@@ -19,11 +19,24 @@ body {
   align-items: center;
 }
 
+img{
+  align-self: center;
+  position: absolute;
+  top: 50px;
+  left: 100px;
+  background: linear-gradient(
+    200.96deg,
+    #000000 -29.09%,
+    #ffffff 129.35%
+  );
+
+}
+
 button {
-  background-color: white;
+  background-color: rgb(190, 190, 190);
   padding: 10px 20px;
   border-radius: 10px;
-  border: none;
+  border: gray;
   appearance: none;
   font-size: 1.3rem;
   box-shadow: 0px 8px 28px -6px rgba(24, 39, 75, 0.12),
@@ -31,11 +44,29 @@ button {
   transition: all ease-in 0.1s;
   cursor: pointer;
   opacity: 0.9;
+  position: absolute;
+  top: 200px;
 }
 
 button:hover {
-  transform: scale(1.05);
+  transform: scale(1.20);
   opacity: 1;
+}
+
+.photos {
+  position: absolute;
+  top: 50%;
+}
+
+.button-bar {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  align-self: center;
+}
+
+.button-bar a {
+  margin: 0 75px;
 }
 
 li {
@@ -59,4 +90,12 @@ a:hover {
   justify-content: center;
   align-items: center;
   margin: 20px 0;
+  text-align: center;
+
+}
+
+
+.center-button{
+  text-align: center;
+
 }
